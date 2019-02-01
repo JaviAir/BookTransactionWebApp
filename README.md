@@ -19,3 +19,7 @@ The user can
 Conditions:
   The number of books can not be less than the number of books issued.
   If no books are issued then that book listing can be deleted.
+
+
+
+In the API, UI threads call the controller that populates the model and returns the values to the view.
