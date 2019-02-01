@@ -1,0 +1,12 @@
+
+<label for="bookQuantity" class="control-label">Editing Book Quantity for ISBN: {{onEditIsbn}}</label>
+<br />
+<label for="bookQuantity" class="control-label">Number of Books: </label>
+<input id="bookQuantity" #edit_numberOfBooksInput type="text" placeholder="Number of Books" (input)="checkInput(edit_numberOfBooksInput.value)"/><p>{{warning_message}}</p>
+<button type="button" class="btn btn-lg btn-block btn-primary" [disabled]="!enableSave" routerLink="/"
+        (click)="saveBook(edit_numberOfBooksInput.value)">
+  Save
+</button>
+<br />
+
+

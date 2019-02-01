@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\add-view",
+    "\\src\\app\\edit-view",
+    "\\src\\app\\transaction-view"
+  ],
+  "SelectedNode": "\\src\\app\\transaction-view\\transaction-view.component.html",
+  "PreviewInSolutionExplorer": false
+}

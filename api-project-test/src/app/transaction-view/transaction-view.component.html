@@ -1,0 +1,78 @@
+<h1>Book Transactions</h1>
+<label class="control-label">Showing book transactioins for Book with ISBN: {{onTransactionBookIsbn}}</label>
+
+<table class='table' *ngIf="transactions">
+  <thead>
+    <tr>
+      <th>Book ID</th>
+      <th>Transaction Date</th>
+      <th>Transaction Type</th>
+      <th>Status Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let object of transactions">
+      <td>{{ object.bookId }}</td>
+      <td>{{ object.transactionDateCreated }}</td>
+      <td>{{ object.transactionType }}</td>
+      <td>{{ object.transactionDateTyped }}</td>
+      <td>
+        <button type="button" class="btn btn-lg btn-block btn-outline-secondary"
+                (click)="editBookTransaction(object.transactionId, editPopup)">
+          Return
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="btn btn-lg btn-block btn-outline-primary" [disabled]="disablePopup" (click)="createBookTransaction(addPopup)">Issue Transaction</button>
+      </td>
+    </tr> 
+  </tbody>
+</table>
+
+
+
+<ng-template #editPopup let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Transaction Returned</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <br />
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-lg btn-block btn-secondary" 
+            (click)="closeModalPopup()">
+      <i class="fa fa-repeat"></i> Okay
+    </button>
+  </div>
+</ng-template>
+
+
+
+
+<ng-template #addPopup let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Transaction issued!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Book ID: {{modalBookId}} </p>
+    <p>Transaction Date: {{transactionDateCreated}}</p>
+    <p>Transaction Type: {{transactionType}}</p>
+    <p>Date: {{transactionDateTyped}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-lg btn-block btn-secondary"
+            (click)="closeModalPopup()">
+      <i class="fa fa-repeat"></i> Okay
+    </button>
+  </div>
+</ng-template>
+
+

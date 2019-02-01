@@ -1,0 +1,21 @@
+<ul>
+  <li><input #bookNameInput type="text" placeholder="Book Name"></li>
+
+  <li><input #authorNameInput type="text" placeholder="Author Name"></li>
+
+  <li><input #isbnCodeInput type="text" placeholder="ISBN Code"></li>
+
+  <li><input #numberOfBooksInput type="text" placeholder="Number of Books"></li>
+
+  <li><input #publishDateInput type="date" /></li>
+
+  <li><input #CategoryInput type="text" placeholder="Category"></li>
+
+</ul>
+
+<button type="button" class="btn btn-lg btn-block btn-outline-success" routerLink="/"
+        (click)="createBook(bookNameInput.value, authorNameInput.value, isbnCodeInput.value, numberOfBooksInput.value, publishDateInput.value, CategoryInput.value)">
+  <i class="fa fa-repeat"></i> Submit
+</button>
+
+
