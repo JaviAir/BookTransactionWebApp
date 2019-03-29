@@ -24,7 +24,7 @@ export class TestService {
     return this.http.delete('https://localhost:5001/api/shop/' + bookId);
   }
 
-  //BookTransaction Calls
+  // BookTransaction Calls
 
   getBookTransactions(bookId) {
     return this.http.get('https://localhost:5001/api/shop/transaction-view/' + bookId);
@@ -36,8 +36,8 @@ export class TestService {
   }
 
   returnBookTransaction(bookId, transactionId) {
-    
-    return this.http.post('https://localhost:5001/api/shop/transaction-return/' + bookId + '/' + transactionId, '');    
+
+    return this.http.post('https://localhost:5001/api/shop/transaction-return/' + bookId + '/' + transactionId, '');
 
   }
 
